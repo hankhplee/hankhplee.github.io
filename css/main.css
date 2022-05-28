@@ -1,14 +1,17 @@
 /* Ubuntu, Ubuntu */
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
 
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Ubuntu", sans-serif,'cwTeXFangSong'!important;
   font-weight: 300;
   color: #333;
   line-height: 1.5;
   font-size: 16px;
 }
+
+.chinese_name { font-family: 'cwTeXFangSong'}
 
 a,
 a:hover {
