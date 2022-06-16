@@ -151,6 +151,11 @@ ul.flat li {
   margin-left: 0;
 }
 
+/* .social-icon {
+  width: 30px;
+  height: 30px;
+} */
+
 .prevent-collapse {
   min-height: 0.1rem;
 }
