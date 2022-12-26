@@ -251,7 +251,7 @@ ul {
 }
 
 .header .site-affilation {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
 }
 
