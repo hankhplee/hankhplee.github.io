@@ -278,7 +278,8 @@ ul {
 }
 
 .header .site-affilation nav ul svg {
-  max-height: 15px;
+  max-height: 25px;
+  margin: .05em;
 }
 
 /* header for projects */
@@ -339,11 +340,11 @@ ul {
 .code_blog {
     font-family: "Ubuntu Mono";
     font-size: 16px;
-    margin: 0em .9em 0em;
+    margin: .3em 1.5em 0em;
 }
 
-.code_blog .social-icon {
-    max-height: 15px;
+.code_blog a {
+  margin: .05em;
 }
 
 .blog_cv {
