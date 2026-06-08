@@ -1,7 +1,13 @@
 /* Ubuntu, Ubuntu */
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
-@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+@font-face {
+  font-family: 'cwTeXFangSong';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/cwTeXQFangsongZH-Medium.woff2') format('woff2');
+}
 
 body {
   font-family: "Ubuntu", sans-serif,'cwTeXFangSong'!important;
@@ -89,6 +95,14 @@ a:hover {
 }
 
 a:hover {
+  text-decoration: underline;
+}
+
+.paper-note {
+  color: #C41230;
+}
+.paper-note a {
+  color: #C41230;
   text-decoration: underline;
 }
 
