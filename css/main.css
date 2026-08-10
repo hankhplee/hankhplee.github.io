@@ -88,6 +88,22 @@ span {
     display: block;
 }
 
+.intro-paragraph {
+  margin-bottom: 16px;
+}
+
+.intro-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.company-icon {
+  margin: 0 0.28em 0 0.05em;
+}
+
+.intro-paragraph i.company-icon {
+  font-size: 0.95em;
+}
+
 a,
 a:hover {
   color:#B3A369;
@@ -100,6 +116,8 @@ a:hover {
 
 .paper-note {
   color: #C41230;
+  font-size: 0.88rem;
+  margin-top: 8px;
 }
 .paper-note a {
   color: #C41230;
@@ -130,6 +148,10 @@ h2 {
 
 h3 {
   font-size: 1.6rem;
+}
+
+.publications-title {
+  font-size: 1.3rem;
 }
 
 h4 {
@@ -219,81 +241,142 @@ ul {
   /* padding-bottom: 20px; */
 }
 
-.header .profile_image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 30%;
-  height: auto;
-  border-radius: 50%;
-  /* float: left; */
+/* PAGE LAYOUT (2-column, static left sidebar) --------------------------- */
+.page-layout {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 60px 24px 40px;
 }
 
-.header h1,
-.header h2 {
-  margin: 0;
-  padding: 0;
-  font-size: 2rem;
-  line-height: 1.3em;
+.main-content {
+  margin-left: 276px; /* sidebar width (220px) + gap (56px) */
+  min-width: 0;
+  max-width: 680px;
 }
 
-.header h2 {
-  font-size: 1.125rem;
+/* SIDEBAR ------------------------------------------------------------------
+   Fixed (not sticky) to the viewport, same technique as
+   michelle123lam.github.io: sticky depends on ancestor height/overflow and
+   can come unstuck; fixed removes the sidebar from flow entirely so it
+   simply cannot move on scroll. */
+.sidebar {
+  position: fixed;
+  top: 48px;
+  left: max(24px, calc((100vw - 1040px) / 2 + 24px));
+  width: 220px;
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
 }
 
-.header nav {
-  margin-top: 20px;
-  /* border-top: 1px solid #f4f4f4; */
+.sidebar-name .site-title {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
 }
 
-.header nav ul,
-.header nav li {
-  margin: 0;
+.sidebar-name .chinese_name {
+  margin: 0 0 14px;
+  font-size: 1.6rem;
 }
 
-.header nav ul.flat {
-  padding: 0;
+.sidebar-affiliation {
+  margin-bottom: 24px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #666;
 }
 
-.header nav ul.flat li {
-  display: inline-block;
-  list-style: none;
-  margin-left: 0;
-  margin-right: 10px;
-  margin-top: 10px;
-  text-transform: capitalize;
-}
-
-.header .site-affilation {
-  /* display: flex; */
-  justify-content: space-between;
-}
-
-.header .site-affilation .email {
-  /* color:#B3A369; */
-  font-size: 14px;
-  display: block;
-  font-family: "Ubuntu Mono";
-  font-weight: bolder;
-}
-
-.header .site-affilation .position {
-  /* color:#B3A369; */
-  /* font-size: 14px; */
-  /* display: block; */
+.sidebar-affiliation .position {
   font-family: Ubuntu;
-  /* font-weight: bolder; */
 }
 
-.header .site-affilation nav {
+.sidebar-photo {
+  margin-bottom: 24px;
+}
+
+.sidebar-photo img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-links ul.flat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.sidebar-links ul.flat li {
+  display: block;
   margin: 0;
-  padding: 0;
-  border: none;
 }
 
-.header .site-affilation nav ul svg {
-  max-height: 25px;
-  margin: .05em;
+.sidebar-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: #666;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+  opacity: 1;
+  color: #B3A369;
+}
+
+.sidebar-links .social-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.sidebar-links .social-label {
+  display: inline;
+}
+
+.sidebar-menu {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.sidebar-menu ul.flat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-menu ul.flat li {
+  display: block;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .page-layout {
+    padding: 40px 20px;
+  }
+
+  .sidebar {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 360px;
+    max-height: none;
+    overflow-y: visible;
+    margin-bottom: 32px;
+  }
+
+  .main-content {
+    margin-left: 0;
+    max-width: 100%;
+  }
 }
 
 /* header for projects */
@@ -350,6 +433,168 @@ ul {
 /* .publications {
   margin-left: -.5em;
 } */
+
+.pub-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.pub-group-note {
+  font-size: 0.88rem;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.pub-list .pub-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.pub-item.pub-highlight {
+  background-color: #FFF8E1;
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-left: -14px;
+  margin-right: -14px;
+}
+
+.pub-badge-col {
+  flex: 0 0 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  padding-top: 3px;
+}
+
+.pub-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.pub-title {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #222;
+  margin-bottom: 3px;
+}
+
+.pub-title a {
+  color: #222;
+  border-bottom: 1px solid transparent;
+}
+
+.pub-title a:hover {
+  color: #B3A369;
+  border-bottom-color: #B3A369;
+  text-decoration: none;
+}
+
+.pub-authors {
+  font-size: 0.92rem;
+  color: #777;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.pub-authors u {
+  color: #444;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.pub-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+}
+
+.pub-venue-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #8a7d4a;
+  background: rgba(179, 163, 105, 0.14);
+  border: 1px solid rgba(179, 163, 105, 0.4);
+  border-radius: 4px;
+  padding: 2px 7px;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.pub-venue-badge[data-tooltip]:not([data-tooltip=""])::after {
+  content: attr(data-tooltip);
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-left: 10px;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: normal;
+  white-space: normal;
+  text-align: left;
+  width: max-content;
+  max-width: 280px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 30;
+}
+
+.pub-venue-badge[data-tooltip]:not([data-tooltip=""]):hover::after,
+.pub-venue-badge[data-tooltip]:not([data-tooltip=""]):focus::after {
+  display: block;
+}
+
+.pub-award {
+  display: inline-block;
+  text-align: right;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: #C41230;
+  font-weight: 500;
+}
+
+.pub-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.pub-link i {
+  font-size: 0.85em;
+  width: 1em;
+  text-align: center;
+}
+
+.pub-link:hover {
+  color: #B3A369;
+  text-decoration: none;
+}
 
 .code_blog {
     font-family: "Ubuntu Mono";
