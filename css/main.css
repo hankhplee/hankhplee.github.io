@@ -261,27 +261,27 @@ ul {
    simply cannot move on scroll. */
 .sidebar {
   position: fixed;
-  top: 48px;
+  top: 32px;
   left: max(24px, calc((100vw - 1040px) / 2 + 24px));
   width: 220px;
-  max-height: calc(100vh - 96px);
+  max-height: calc(100vh - 64px);
   overflow-y: auto;
 }
 
 .sidebar-name .site-title {
-  margin: 0 0 4px;
+  margin: 0 0 3px;
   font-size: 1.5rem;
   line-height: 1.25;
   letter-spacing: 0.3px;
 }
 
 .sidebar-name .chinese_name {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   font-size: 1.6rem;
 }
 
 .sidebar-affiliation {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   font-size: 0.92rem;
   line-height: 1.5;
   color: #666;
@@ -292,8 +292,8 @@ ul {
 }
 
 .sidebar-announcement {
-  margin-bottom: 24px;
-  padding: 10px 12px;
+  margin-bottom: 18px;
+  padding: 8px 10px;
   background: rgba(179, 163, 105, 0.12);
   border-left: 3px solid #B3A369;
   border-radius: 4px;
@@ -305,11 +305,15 @@ ul {
 .sidebar-announcement-title {
   font-weight: 700;
   color: #8a7d4a;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
+}
+
+.sidebar-announcement-text {
+  font-size: 0.8rem;
 }
 
 .sidebar-photo {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .sidebar-photo img {
@@ -358,8 +362,8 @@ ul {
 }
 
 .sidebar-menu {
-  margin-top: 24px;
-  padding-top: 16px;
+  margin-top: 16px;
+  padding-top: 12px;
   border-top: 1px solid #eee;
 }
 
