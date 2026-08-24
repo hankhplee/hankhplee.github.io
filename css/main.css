@@ -617,6 +617,61 @@ ul {
   text-decoration: none;
 }
 
+.press-toggle {
+  font-weight: 500;
+  border-bottom: 1px dashed currentColor;
+  cursor: pointer;
+}
+
+.press-coverage {
+  display: none;
+  margin-top: 10px;
+  padding: 14px 16px;
+  background-color: #FAF8F2;
+  border-left: 3px solid #B3A369;
+  border-radius: 0 6px 6px 0;
+}
+
+.press-coverage.is-open {
+  display: block;
+  animation: pressCoverageSlideDown 0.25s ease-out;
+}
+
+.press-coverage-group {
+  margin-bottom: 14px;
+}
+
+.press-coverage-group:last-child {
+  margin-bottom: 0;
+}
+
+.press-coverage-group h4 {
+  margin: 0 0 6px 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #8a7d4a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.press-coverage-compact {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+@keyframes pressCoverageSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .code_blog {
     font-family: "Ubuntu Mono";
     font-size: 16px;
