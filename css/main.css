@@ -115,12 +115,12 @@ a:hover {
 }
 
 .paper-note {
-  color: #C41230;
+  color: #8a7d4a;
   font-size: 0.88rem;
   margin-top: 8px;
 }
 .paper-note a {
-  color: #C41230;
+  color: #8a7d4a;
   text-decoration: underline;
 }
 
@@ -251,7 +251,7 @@ ul {
 .main-content {
   margin-left: 276px; /* sidebar width (220px) + gap (56px) */
   min-width: 0;
-  max-width: 680px;
+  max-width: 710px;
 }
 
 /* SIDEBAR ------------------------------------------------------------------
